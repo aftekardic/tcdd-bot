@@ -5,14 +5,7 @@ TCDD BOT is an application designed to assist users in finding TCDD tickets and 
 
 ## Getting Started
 
-### Usage
-
-If you want to use the application, you can run the program by following step:
-- **Run with exe or app**
-   
-### Development
-
-If you want to contribute to the development of the program, follow these steps:
+### Usage & Development
 
 1. **Create a Virtual Environment:**
 ```
@@ -38,14 +31,18 @@ cd ../../
 ```
 pip install -r requirements.txt
 ```
-5. **Run with terminal:**
+5. **Running:**
+1. With terminal:
 ```
 python main.py
 ```
+2. Create an exe or app:
+```
+pyinstaller --noconfirm --onefile --windowed --hidden-import "PyQt5.QtWidgets" --hidden-import "PyQt5.QtCore" --hidden-import "PyQt5.QtGui" --hidden-import "ui" --hidden-import "datetime" --hidden-import "rpa" --hidden-import "custom_tools" src/main.py
+```
+   - After create an app/exe, your application is in the dist folder.
+
 ## Technologies Used
-
-### I code with
-
 ###
 
 <div align="left">
