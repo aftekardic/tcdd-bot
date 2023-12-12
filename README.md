@@ -1,27 +1,58 @@
-<h1 align="center">TCDD BOT</h1>
+# TCDD BOT
 
-###
+![Project Logo](https://your-image-link.com)
 
-<p align="left">The application helps you for find a TCDD ticket and send an e-mail. Now one rotation is available.</p>
+TCDD BOT is an application designed to assist users in finding TCDD tickets and sending email notifications. As of now, the application supports one rotation.
 
-###
+## Getting Started
 
-<h3 align="left">If you want use, you can run the program.<br><br>If you want to develop the program. Follow the steps below;</h3>
+### Usage
 
-###
+If you want to use the application, you can run the program by following step:
+- **Run with exe or app**
+   
+### Development
 
-<p align="left">1- Creating a environment. python -m venv env<br><br>2- Activate the env. <br>Linux/Mac: cd env/lib; source activate;<br>Windows: cd env/Source; activate;<br><br>3- Back to main folder. cd ../../;<br><br>4- Install dependencies. pip install requirements.txt</p>
+If you want to contribute to the development of the program, follow these steps:
 
-###
+1. **Create a Virtual Environment:**
+```
+python -m venv env
+```
+2. **Activate the Virtual Environment:**
+- **Linux/Mac:**
+  ```
+  cd /env/bin/
+  source activate
+  ```
+- **Windows:**
+  ```
+  cd /env/Scripts
+  activate
+  ```
 
-<h2 align="left">I code with</h2>
+3. **Navigate to the Main Folder:**
+```
+cd ../../
+```
+4. **Install Dependencies:**
+```
+pip install -r requirements.txt
+```
+5. **Run with terminal:**
+```
+python main.py
+```
+## Technologies Used
+
+### I code with
 
 ###
 
 <div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/selenium/43B02A" height="40" alt="selenium logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python"/>
+  <img src="https://cdn.simpleicons.org/selenium/43B02A" height="40" alt="Selenium"  />
 </div>
 
 ###
+
