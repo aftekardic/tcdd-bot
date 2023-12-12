@@ -1,6 +1,5 @@
 # TCDD BOT
 
-![Project Logo](https://your-image-link.com)
 
 TCDD BOT is an application designed to assist users in finding TCDD tickets and sending email notifications. As of now, the application supports one rotation.
 
