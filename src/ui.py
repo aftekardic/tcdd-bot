@@ -1,0 +1,135 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(510, 812)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.from_widget = QtWidgets.QWidget(self.centralwidget)
+        self.from_widget.setGeometry(QtCore.QRect(40, 100, 191, 231))
+        self.from_widget.setObjectName("from_widget")
+        self.from_list = QtWidgets.QListWidget(self.from_widget)
+        self.from_list.setGeometry(QtCore.QRect(0, 30, 191, 192))
+        self.from_list.setObjectName("from_list")
+        self.search_from = QtWidgets.QTextBrowser(self.from_widget)
+        self.search_from.setGeometry(QtCore.QRect(80, 0, 111, 31))
+        self.search_from.setReadOnly(False)
+        self.search_from.setObjectName("search_from")
+        self.from_text = QtWidgets.QLabel(self.from_widget)
+        self.from_text.setGeometry(QtCore.QRect(0, 10, 60, 16))
+        self.from_text.setObjectName("from_text")
+        self.to_widget = QtWidgets.QWidget(self.centralwidget)
+        self.to_widget.setGeometry(QtCore.QRect(280, 100, 191, 231))
+        self.to_widget.setObjectName("to_widget")
+        self.to_list = QtWidgets.QListWidget(self.to_widget)
+        self.to_list.setGeometry(QtCore.QRect(0, 30, 191, 192))
+        self.to_list.setObjectName("to_list")
+        self.search_to = QtWidgets.QTextBrowser(self.to_widget)
+        self.search_to.setGeometry(QtCore.QRect(80, 0, 111, 31))
+        self.search_to.setReadOnly(False)
+        self.search_to.setObjectName("search_to")
+        self.to_text = QtWidgets.QLabel(self.to_widget)
+        self.to_text.setGeometry(QtCore.QRect(0, 10, 60, 16))
+        self.to_text.setObjectName("to_text")
+        self.date = QtWidgets.QCalendarWidget(self.centralwidget)
+        self.date.setGeometry(QtCore.QRect(40, 470, 431, 191))
+        self.date.setObjectName("date")
+        self.start_time = QtWidgets.QTimeEdit(self.centralwidget)
+        self.start_time.setGeometry(QtCore.QRect(40, 390, 118, 22))
+        self.start_time.setObjectName("start_time")
+        self.end_time = QtWidgets.QTimeEdit(self.centralwidget)
+        self.end_time.setGeometry(QtCore.QRect(280, 390, 118, 22))
+        self.end_time.setObjectName("end_time")
+        self.include_business = QtWidgets.QCheckBox(self.centralwidget)
+        self.include_business.setGeometry(QtCore.QRect(40, 700, 181, 20))
+        self.include_business.setObjectName("include_business")
+        self.search_button = QtWidgets.QPushButton(self.centralwidget)
+        self.search_button.setGeometry(QtCore.QRect(340, 750, 113, 32))
+        self.search_button.setObjectName("search_button")
+        self.title = QtWidgets.QTextEdit(self.centralwidget)
+        self.title.setGeometry(QtCore.QRect(0, 0, 511, 61))
+        self.title.setReadOnly(True)
+        self.title.setObjectName("title")
+        self.departure_text = QtWidgets.QLabel(self.centralwidget)
+        self.departure_text.setGeometry(QtCore.QRect(40, 450, 121, 16))
+        self.departure_text.setObjectName("departure_text")
+        self.start_text = QtWidgets.QLabel(self.centralwidget)
+        self.start_text.setGeometry(QtCore.QRect(40, 370, 121, 16))
+        self.start_text.setObjectName("start_text")
+        self.finish_text = QtWidgets.QLabel(self.centralwidget)
+        self.finish_text.setGeometry(QtCore.QRect(280, 370, 121, 16))
+        self.finish_text.setObjectName("finish_text")
+        self.formLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.formLayoutWidget.setGeometry(QtCore.QRect(40, 730, 271, 61))
+        self.formLayoutWidget.setObjectName("formLayoutWidget")
+        self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
+        self.formLayout.setLabelAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+        self.formLayout.setFormAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.formLayout.setContentsMargins(0, 0, 0, 0)
+        self.formLayout.setObjectName("formLayout")
+        self.mail_label = QtWidgets.QLabel(self.formLayoutWidget)
+        self.mail_label.setObjectName("mail_label")
+        self.formLayout.setWidget(
+            0, QtWidgets.QFormLayout.LabelRole, self.mail_label)
+        self.password_label = QtWidgets.QLabel(self.formLayoutWidget)
+        self.password_label.setObjectName("password_label")
+        self.formLayout.setWidget(
+            1, QtWidgets.QFormLayout.LabelRole, self.password_label)
+        self.mail = QtWidgets.QLineEdit(self.formLayoutWidget)
+        self.mail.setEnabled(True)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.mail.sizePolicy().hasHeightForWidth())
+        self.mail.setSizePolicy(sizePolicy)
+        self.mail.setMinimumSize(QtCore.QSize(200, 0))
+        self.mail.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.mail.setObjectName("mail")
+        self.formLayout.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.mail)
+        self.password = QtWidgets.QLineEdit(self.formLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(
+            self.password.sizePolicy().hasHeightForWidth())
+        self.password.setSizePolicy(sizePolicy)
+        self.password.setMinimumSize(QtCore.QSize(200, 0))
+        self.password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.password.setObjectName("password")
+        self.formLayout.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.password)
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.search_from.setPlaceholderText(_translate("MainWindow", "Search"))
+        self.from_text.setText(_translate("MainWindow", "FROM"))
+        self.search_to.setPlaceholderText(_translate("MainWindow", "Search"))
+        self.to_text.setText(_translate("MainWindow", "TO"))
+        self.include_business.setText(_translate(
+            "MainWindow", "Include to Business Seats"))
+        self.search_button.setText(_translate("MainWindow", "Search"))
+        self.title.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                      "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                      "p, li { white-space: pre-wrap; }\n"
+                                      "</style></head><body style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+                                      "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">AUTO TICKET FINDER</span></p>\n"
+                                      "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+                                      "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Remind you with MAIL</p></body></html>"))
+        self.departure_text.setText(_translate("MainWindow", "DEPARTURE DATE"))
+        self.start_text.setText(_translate("MainWindow", "START TO SEARCH"))
+        self.finish_text.setText(_translate("MainWindow", "FINISH TO SEARCH"))
+        self.mail_label.setText(_translate("MainWindow", "Outlook"))
+        self.password_label.setText(_translate("MainWindow", "Password"))
