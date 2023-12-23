@@ -14,13 +14,14 @@ ct = custom_tools.Tools
 
 
 class RPA():
-    def __init__(self, _from=None, _to=None, _departure_date=None, _clock_start=None, _clock_end=None, _exist_business=None):
+    def __init__(self, _from=None, _to=None, _departure_date=None, _clock_start=None, _clock_end=None, _exist_business=None, _not_exist_disabled=None):
         self._from = _from
         self._to = _to
         self._departure_date = _departure_date
         self._clock_start = datetime.strptime(_clock_start, '%H:%M').time()
         self._clock_end = datetime.strptime(_clock_end, '%H:%M').time()
         self._exist_business = _exist_business.lower() == "true"
+        self._not_exist_disabled = _not_exist_disabled.lower() == "true"
 
         if ct.getOsName() == "Windows" or ct.getOsName() == "Linux":
             chromedriver_autoinstaller.install()
@@ -29,7 +30,7 @@ class RPA():
 
         else:
             self.driver = webdriver.Safari()
-            self.driver.fullscreen_window()
+            # self.driver.fullscreen_window()
 
         self.action_chains = ActionChains(self.driver)
 
@@ -75,7 +76,6 @@ class RPA():
             time = datetime.strptime(row.find_element(
                 By.XPATH, "./td[1]/span").get_attribute("innerText"), '%H:%M').time()
             if self._clock_end >= time and time >= self._clock_start:
-
                 if self._exist_business:
                     res_business = self.driver.find_element(
                         By.XPATH, f"//*[@id='mainTabView:gidisSeferTablosu:{index}:j_idt109:0:somVagonTipiGidis1_panel']/div/ul/li[2]").text
@@ -108,6 +108,15 @@ class RPA():
                         })
 
             index += 1
+
+        if self._not_exist_disabled:
+            for seat_type, seat_info_list in available_seats[0].items():
+                temp_array = []
+                for item in seat_info_list:
+                    if "Engelli" not in list(item.values())[0]:
+                        temp_array.append(item)
+                    available_seats[0][seat_type] = temp_array
+
         return available_seats
 
     def closeDriver(self):

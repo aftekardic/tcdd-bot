@@ -27,17 +27,17 @@ class RpaThread(QThread):
         try:
             self.rpa = RPA(self.data["from"], self.data["to"],
                            self.data["departure_date"], self.data["clock_start"],
-                           self.data["clock_end"], str(self.data["exist_business"]))
+                           self.data["clock_end"], str(self.data["exist_business"]), str(self.data["exist_disabled"]))
             availables_seats = self.rpa.runner()
 
             self.finished_signal.emit(str(availables_seats))
 
             try:
                 if len(availables_seats[0]["ECONOMY"]) != 0 or len(availables_seats[0]["BUSINESS"]) != 0:
-
                     self.tools.sendEmail(password=self.password,
                                          to_email=self.mail, body=availables_seats, _from=self.data["from"], _to=self.data["to"])
             except:
+
                 pass
 
         except:
@@ -105,6 +105,7 @@ class Application(QMainWindow):
             "HH:mm") if self.ui.end_time.time() else None
 
         _exist_business = True if self.ui.include_business.checkState() != 0 else False
+        _not_exist_disabled = True if self.ui.include_disabled.checkState() != 0 else False
 
         self.mail = self.ui.mail.text()
         self.password = self.ui.password.text()
@@ -115,7 +116,8 @@ class Application(QMainWindow):
             "departure_date": _departure_date,
             "clock_start": _clock_start,
             "clock_end": _clock_end,
-            "exist_business": _exist_business
+            "exist_business": _exist_business,
+            "exist_disabled": _not_exist_disabled
         }
 
     def ProgressDialog(self):
